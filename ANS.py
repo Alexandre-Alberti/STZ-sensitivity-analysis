@@ -1,20 +1,23 @@
-import math
+#import math
 import numpy as np
-import pandas as pd
+#import pandas as pd
+import scipy
 from scipy.integrate import quad, dblquad
 from scipy.optimize import minimize
 import streamlit as st
-import sys
+#import sys
 from streamlit import cli as stcli
-from PIL import Image
+#from PIL import Image
 import random 
 import matplotlib.pyplot as plt 
 # Funções e definições anteriores
 
 def main():
     col1, col2, col3 = st.columns(3)
-    foto = Image.open('foto.png')
-    col2.image(foto, use_column_width=True)
+    
+    st.image("foto.png")
+    #foto = Image.open('foto.png')
+    #col2.image(foto, use_column_width=True)
 
     st.title('Análise de Sensibilidade da Política de Substituição Preventiva com Oportunidade e Prorrogação')
 
