@@ -6,7 +6,7 @@ from scipy.integrate import quad, dblquad
 from scipy.optimize import minimize
 import streamlit as st
 #import sys
-from streamlit import cli as stcli
+#from streamlit import cli as stcli
 #from PIL import Image
 from numpy import random 
 import matplotlib.pyplot as plt 
