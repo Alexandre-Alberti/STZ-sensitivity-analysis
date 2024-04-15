@@ -19,37 +19,47 @@ def main():
     #foto = Image.open('foto.png')
     #col2.image(foto, use_column_width=True)
 
-    st.title('Análise de Sensibilidade da Política de Substituição Preventiva com Oportunidade e Prorrogação')
+    st.title('Política STZ - Análise de Sensibilidade')
 
     menu = ["Aplicação", "Informação", "Website"]
     choice = st.sidebar.selectbox("Selecione aqui", menu)
     
     if choice == menu[0]:
         st.header(menu[0])
-        st.subheader("Insira os valores dos parâmetros abaixo:")
+        st.subheader("Insira os valores dos parâmetros abaixo")
         
-        Beta = st.number_input('Parâmetro de forma (beta)')
-        Eta = st.number_input('Parâmetro de escala (eta)')    
-        Lbda = st.number_input('Taxa de Chegada de Oportunidade (Lambda)')
-        Cp = st.number_input('Custo de Substituição Preventiva em T(programado):') 
-        Cv = st.number_input('Custo de Substituição Preventiva em Z:')
-        Co = st.number_input('Custo de Substituição Preventiva em Oportunidade:') 
-        Cf = st.number_input('Custo da manutenção corretiva:') 
-        Cw = st.number_input('Substituição oportuna entre T e Z:')
-        P = st.number_input('Probabilidade de Impedimento:')
-         
-        betaimprec = st.number_input('Imprecisão do Parâmetro de forma (beta)')
-        etaimprec = st.number_input('Imprecisão do Parâmetro de escala (eta)')    
-        lbdaimprec = st.number_input('Imprecisão da Taxa de Chegada de Oportunidade (Lambda)')
-        cpimprec = st.number_input('Imprecisão do Custo de Substituição Preventiva em T(programado):') 
-        cvimprec = st.number_input('Imprecisão do Custo de Substituição Preventiva em Z:')
-        coimprec = st.number_input('Imprecisão do Custo de Substituição Preventiva em Oportunidade:') 
-        cfimprec = st.number_input('Imprecisão do Custo da manutenção corretiva:') 
-        cwimprec = st.number_input('Imprecisão da Substituição oportuna entre T e Z:')
-        pimpre = st.number_input('Imprecisão da Probabilidade de Impedimento:')
-        S = st.number_input('Valor de S')
-        T= st.number_input('Valor de T')    
-        Z= st.number_input('Valor de Z')
+        Beta = st.number_input('Beta - parâmetro de forma da distribuição de probabilídade de Weibull para o tempo até a falha')
+        betaimprec = st.number_input('Imprecisão na estimativa de Beta (%)')
+        betaimprec = betaimprec/100
+        Eta = st.number_input('Eta - parâmetro de escala da distribuição de probabilídade de Weibull para o tempo até a falha')
+        etaimprec = st.number_input('Imprecisão na estimativa de Eta (%)')
+        etaimprec = etaimprec/100
+        Lbda = st.number_input('Lambda - taxa de chegada de oportunidades para manutenção')
+        lbdaimprec = st.number_input('Imprecisão na estimativa de Lambda (%)') 
+        lbdaimprec = lbdaimprec/100
+        Cp = st.number_input('Cp - custo de substituição preventiva em T (programada)')
+        cpimprec = st.number_input('Imprecisão na estimativa de Cp (%)') 
+        cpimprec = cpimprec/100
+        Cv = st.number_input('Cv - custo de substituição preventiva em Z (prorrogada)')
+        cvimprec = st.number_input('Imprecisão na estimativa de Cv (%)')
+        cvimprec = cvimprec/100
+        Co = st.number_input('Co - custo de substituição preventiva antecipada por oportunidade')
+        coimprec = st.number_input('Imprecisão na estimativa de Co (%)') 
+        coimprec = coimprec/100
+        Cw = st.number_input('Cw - custo de substituição preventiva em oportunidade posterior a T')
+        cwimprec = st.number_input('Imprecisão na estimativa de Cw (%)')
+        cwimprec = cwimprec/100
+        Cf = st.number_input('Cf - custo de substituição corretiva') 
+        cfimprec = st.number_input('Imprecisão na estimativa de Cf (%)')
+        cfimprec = cfimprec/100
+        P = st.number_input('P - probabilidade de impedimento para substituição preventiva na data programada')
+        pimpre = st.number_input('Imprecisão na estimativa de P (%)')
+        pimpre = pimpre/100 
+
+        st.subheader("Insira os valores das variáveis de decisão da política de manutenção (política STZ)")
+        S = st.number_input('S - data de abertura da janela para aproveitamento de oportunidades')
+        T= st.number_input('T - data programada para a substituição preventiva')    
+        Z= st.number_input('Z - data limite para a substituição preventiva em caso de prorrogação')
         y = (S, T, Z)
         
         st.subheader("Clique no botão abaixo para rodar esse aplicativo:")
