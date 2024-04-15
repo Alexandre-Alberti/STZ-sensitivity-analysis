@@ -57,9 +57,9 @@ def main():
         pimpre = pimpre/100 
 
         st.subheader("Insira os valores das variáveis de decisão da política de manutenção (política STZ)")
-        S = st.number_input('S - data de abertura da janela para aproveitamento de oportunidades')
-        T= st.number_input('T - data programada para a substituição preventiva')    
-        Z= st.number_input('Z - data limite para a substituição preventiva em caso de prorrogação')
+        S = st.number_input('S - data de abertura da janela para aproveitamento de oportunidades',format="%.7f", step = 0.0000001)
+        T= st.number_input('T - data programada para a substituição preventiva',format="%.7f", step = 0.0000001)    
+        Z= st.number_input('Z - data limite para a substituição preventiva em caso de prorrogação',format="%.7f", step = 0.0000001)
         y = (S, T, Z)
         
         st.subheader("Clique no botão abaixo para rodar esse aplicativo:")
