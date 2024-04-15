@@ -28,32 +28,32 @@ def main():
         st.header(menu[0])
         st.subheader("Insira os valores dos parâmetros abaixo")
         
-        Beta = st.number_input('Beta - parâmetro de forma da distribuição de probabilídade de Weibull para o tempo até a falha')
-        betaimprec = st.number_input('Imprecisão na estimativa de Beta (%)')
+        Beta = st.number_input('Beta - parâmetro de forma da distribuição de probabilídade de Weibull para o tempo até a falha',format="%.7f", step = 0.0000001)
+        betaimprec = st.number_input('Imprecisão na estimativa de Beta (%)',format="%.7f", step = 0.0000001)
         betaimprec = betaimprec/100
-        Eta = st.number_input('Eta - parâmetro de escala da distribuição de probabilídade de Weibull para o tempo até a falha')
-        etaimprec = st.number_input('Imprecisão na estimativa de Eta (%)')
+        Eta = st.number_input('Eta - parâmetro de escala da distribuição de probabilídade de Weibull para o tempo até a falha',format="%.7f", step = 0.0000001)
+        etaimprec = st.number_input('Imprecisão na estimativa de Eta (%)',format="%.7f", step = 0.0000001)
         etaimprec = etaimprec/100
-        Lbda = st.number_input('Lambda - taxa de chegada de oportunidades para manutenção')
-        lbdaimprec = st.number_input('Imprecisão na estimativa de Lambda (%)') 
+        Lbda = st.number_input('Lambda - taxa de chegada de oportunidades para manutenção',format="%.7f", step = 0.0000001)
+        lbdaimprec = st.number_input('Imprecisão na estimativa de Lambda (%)',format="%.7f", step = 0.0000001) 
         lbdaimprec = lbdaimprec/100
-        Cp = st.number_input('Cp - custo de substituição preventiva em T (programada)')
-        cpimprec = st.number_input('Imprecisão na estimativa de Cp (%)') 
+        Cp = st.number_input('Cp - custo de substituição preventiva em T (programada)',format="%.7f", step = 0.0000001)
+        cpimprec = st.number_input('Imprecisão na estimativa de Cp (%)',format="%.7f", step = 0.0000001) 
         cpimprec = cpimprec/100
-        Cv = st.number_input('Cv - custo de substituição preventiva em Z (prorrogada)')
-        cvimprec = st.number_input('Imprecisão na estimativa de Cv (%)')
+        Cv = st.number_input('Cv - custo de substituição preventiva em Z (prorrogada)',format="%.7f", step = 0.0000001)
+        cvimprec = st.number_input('Imprecisão na estimativa de Cv (%)',format="%.7f", step = 0.0000001)
         cvimprec = cvimprec/100
-        Co = st.number_input('Co - custo de substituição preventiva antecipada por oportunidade')
-        coimprec = st.number_input('Imprecisão na estimativa de Co (%)') 
+        Co = st.number_input('Co - custo de substituição preventiva antecipada por oportunidade',format="%.7f", step = 0.0000001)
+        coimprec = st.number_input('Imprecisão na estimativa de Co (%)',format="%.7f", step = 0.0000001) 
         coimprec = coimprec/100
-        Cw = st.number_input('Cw - custo de substituição preventiva em oportunidade posterior a T')
-        cwimprec = st.number_input('Imprecisão na estimativa de Cw (%)')
+        Cw = st.number_input('Cw - custo de substituição preventiva em oportunidade posterior a T',format="%.7f", step = 0.0000001)
+        cwimprec = st.number_input('Imprecisão na estimativa de Cw (%)',format="%.7f", step = 0.0000001)
         cwimprec = cwimprec/100
-        Cf = st.number_input('Cf - custo de substituição corretiva') 
-        cfimprec = st.number_input('Imprecisão na estimativa de Cf (%)')
+        Cf = st.number_input('Cf - custo de substituição corretiva',format="%.7f", step = 0.0000001) 
+        cfimprec = st.number_input('Imprecisão na estimativa de Cf (%)',format="%.7f", step = 0.0000001)
         cfimprec = cfimprec/100
-        P = st.number_input('P - probabilidade de impedimento para substituição preventiva na data programada')
-        pimpre = st.number_input('Imprecisão na estimativa de P (%)')
+        P = st.number_input('P - probabilidade de impedimento para substituição preventiva na data programada',format="%.7f", step = 0.0000001)
+        pimpre = st.number_input('Imprecisão na estimativa de P (%)',format="%.7f", step = 0.0000001)
         pimpre = pimpre/100 
 
         st.subheader("Insira os valores das variáveis de decisão da política de manutenção (política STZ)")
