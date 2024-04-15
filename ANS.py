@@ -157,7 +157,7 @@ def main():
                 return y[2]-y[1] # Z >= T
 
             Lista_test = []
-            for i in range(0, 20): #LEMBRAR DE COLOCAR OS 400
+            for i in range(0, 500): #LEMBRAR DE COLOCAR OS 400
                 beta = random.uniform(Beta * (1 - betaimprec), Beta * (1 + betaimprec))
                 eta = random.uniform(Eta * (1 - etaimprec), Eta * (1 + etaimprec))
                 lbda = random.uniform(Lbda * (1 - lbdaimprec), Lbda * (1 + lbdaimprec))
